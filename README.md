@@ -8,14 +8,18 @@
     - rails
         + [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
         + [http://guides.rubyonrails.org/getting_started.html](http://guides.rubyonrails.org/getting_started.html)
+        + [http://installrails.com/](http://installrails.com/)
     - ruby
         + kor
             * [http://ruby-korea.github.io/rubygems-guides/rubygems-basics/](http://ruby-korea.github.io/rubygems-guides/rubygems-basics/)
 * lecture
-    - [http://onoffmix.com/event/82501](http://onoffmix.com/event/82501)
-    - [http://onoffmix.com/event/82502](http://onoffmix.com/event/82502)
-* repo
-    - [https://github.com/cycorld/todo-list](https://github.com/cycorld/todo-list)
+    - 최용철 님; 멋쟁이사자처럼(LikeLion) 창립자
+        + 패스트캠퍼스, 멋쟁이사자처럼, 플러닝
+    - onoffmix
+        + [http://onoffmix.com/event/82501](http://onoffmix.com/event/82501)
+        + [http://onoffmix.com/event/82502](http://onoffmix.com/event/82502)
+    - repo
+        + [https://github.com/cycorld/todo-list](https://github.com/cycorld/todo-list)
 
 ---
 
@@ -170,3 +174,80 @@
         + member do get 'toggle'
         + do ~ end ?
         + [http://guides.rubyonrails.org/routing.html](http://guides.rubyonrails.org/routing.html)
+
+---
+
+* 생산성
+    - Rails 규칙을 따르는 선에서는 generate 활용하면 생산선이 높음
+    - 커스터마이징을 하면 이해와 수고가 필요함
+* GEM
+    - package?
+    - devise
+        + [https://github.com/plataformatec/devise](https://github.com/plataformatec/devise)
+        + 기본 기능은 이미 구현. 필요한 부분은 주석 제거.
+        + cmd
+            * $ rails g devise:views
+            * $ rails generate devise User
+                - Admin
+        + helpers
+            * user_signed_in
+            * current_user
+        + 필터
+            * Controller
+            * before_action
+                - 로그인 체크
+                - 권한 체크
+            * after_action
+            * @변수를 사용해서 다른 전처리에서 사용한 변수 전달
+* 모델링
+    - relation
+        + 테이블
+            * 자식에게 부모를 명시
+            * 레퍼런스를 명시해주면 인덱스를 자동으로 추가
+        + 모델
+            * has_many :todos
+            * belongs_to :user
+                - set, get 이 생성되어 릴레이션 관계가 생성
+        + 문법이 너그러움
+            * create 파라미터
+                - user_id: current_user.id
+                - user: current_user
+* ajax
+    - /javascripts/*.coffee
+        + .coffee -> .js 가능
+        + 주의할점
+            * turbolinks
+                - $(document).on('turbolinks:load', function() {/**/})
+                - // $(this).attr('contentEditable', true)
+                - 걷어내도 된다
+                    + del gem, html
+
+* 질답
+    - convention
+        + !
+            * bang
+        + ?
+            * true/false
+    - unless
+    - flash
+        + like java spring
+    - scaffold
+        + CRUD genertator
+        + cmd
+            * rails g scaffold Post user:references content:text 
+        + API
+            * .json
+        + jbuilder
+            * json template
+    - pagination
+        + Todo.order('column ASC').last(10);
+        + gem
+            * [https://github.com/amatsuda/kaminari](https://github.com/amatsuda/kaminari)
+            * [https://github.com/mislav/will_paginate](https://github.com/mislav/will_paginate)
+    - 루비 온 레일즈
+        + 덴마크
+        + 외국
+        + k사 신규 페이지
+        + 일부 스타트업
+        + python, node 다수
+        + 익숙해지면 생산성 좋다
