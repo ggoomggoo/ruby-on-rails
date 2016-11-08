@@ -5,7 +5,12 @@
 ## links
 
 * doc
-    - [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
+    - rails
+        + [http://guides.rubyonrails.org/](http://guides.rubyonrails.org/)
+        + [http://guides.rubyonrails.org/getting_started.html](http://guides.rubyonrails.org/getting_started.html)
+    - ruby
+        + kor
+            * [http://ruby-korea.github.io/rubygems-guides/rubygems-basics/](http://ruby-korea.github.io/rubygems-guides/rubygems-basics/)
 * lecture
     - [http://onoffmix.com/event/82501](http://onoffmix.com/event/82501)
     - [http://onoffmix.com/event/82502](http://onoffmix.com/event/82502)
@@ -22,10 +27,13 @@
 * 대용량 프로젝트는 비추천
     - 2.0 에서 성능 개선
     - 토이 프로젝트
-* cloud9
-    - [c9.io](c9.io)
+* 환경
+    - windows
+        + 어려움
     - cloud ide
-    - amazon.com
+        + cloud9
+            * [c9.io](c9.io)
+            * amazon.com
 * cmd
     - install bundle
         + gem install rails --no-document
@@ -96,6 +104,7 @@
 * route
     - rake routes
     - resources :todos, except: [:index]
+        + get, post, update, delete 등.. 을 기본 포맷으로 자동 생성
 * Todos 컨트롤러의 index 액션에서 전체 Todo 내용 불러오기
     - 변수명 앞에 @붙이면 뷰에서 사용할 수 있음
 * 자료형
@@ -132,3 +141,32 @@
         + seed.rb
             * initial record
             * ex. import csv script
+
+---
+
+* helper
+    - underscore(a_a)
+* form_tag
+* todo_path
+    - rake routes
+        + 주소 규칙
+* data-method
+    - jquery_ujs
+* crud
+    - create
+    - delete
+    - destory
+    - edit
+        + views
+            * edit_*.html.erb
+    - update
+        + redirect root
+            * not back
+* views
+    - layouts
+        + application.html.erb
+* toggle
+    - /config/route.rb
+        + member do get 'toggle'
+        + do ~ end ?
+        + [http://guides.rubyonrails.org/routing.html](http://guides.rubyonrails.org/routing.html)
